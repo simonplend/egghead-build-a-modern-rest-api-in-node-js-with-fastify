@@ -1,6 +1,7 @@
 import Fastify from "fastify";
 
 import { getConfig } from "./config.js";
+import recipesRoutes from "./routes/recipes.js";
 
 export async function buildApp() {
 	const config = getConfig();
@@ -17,9 +18,7 @@ export async function buildApp() {
 
 	fastify.decorate("config", config);
 
-	fastify.get("/", async function (request, reply) {
-		return { data: true };
-	});
+	await fastify.register(recipesRoutes, { prefix: "/recipes" });
 
 	return fastify;
 }
