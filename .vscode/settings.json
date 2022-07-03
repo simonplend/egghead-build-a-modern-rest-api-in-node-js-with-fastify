@@ -1,0 +1,29 @@
+{
+    "workbench.colorTheme": "Ayu Mirage Bordered",
+    "workbench.iconTheme": "ayu",
+    "editor.fontFamily": "'FiraCode Nerd Font', 'monospace', monospace",
+    "editor.fontLigatures": false,
+    "editor.fontSize": 14,
+    "editor.lineHeight": 22,
+    "window.zoomLevel": 4,
+    "editor.formatOnSave": false,
+    "editor.lineNumbers": "on",
+    // "editor.quickSuggestionsDelay": 1500,
+    // "editor.hover.enabled": false,
+    // "breadcrumbs.enabled": false,
+    // "workbench.activityBar.visible": false,
+    // "workbench.statusBar.visible": false,
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        ".vscode": true
+    },
+    "explorerExclude.backup": {},
+    "editor.renderWhitespace": "all",
+    "files.insertFinalNewline": true,
+    "screencastMode.onlyKeyboardShortcuts": true,
+    "editor.cursorBlinking": "solid"
+}
