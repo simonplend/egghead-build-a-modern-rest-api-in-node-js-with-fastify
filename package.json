@@ -4,8 +4,8 @@
   "description": "",
   "type": "module",
   "scripts": {
-		"start": "node src/server.js",
-		"start:dev": "nodemon",
+    "start": "node src/server.js",
+    "start:dev": "nodemon --watch . --watch .env",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,9 +20,12 @@
   },
   "homepage": "https://github.com/simonplend/egghead-build-a-modern-rest-api-in-node-js-with-fastify#readme",
   "dependencies": {
-    "fastify": "^4.2.0"
+    "env-schema": "^5.0.0",
+    "fastify": "^4.2.0",
+    "fluent-json-schema": "^3.1.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.18"
+    "nodemon": "^2.0.18",
+    "pino-pretty": "^8.1.0"
   }
 }
