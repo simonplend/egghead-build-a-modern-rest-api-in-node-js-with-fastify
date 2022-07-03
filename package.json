@@ -2,9 +2,10 @@
   "name": "egghead-build-a-modern-rest-api-in-node-js-with-fastify",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "type": "module",
   "scripts": {
+		"start": "node src/server.js",
+		"start:dev": "nodemon",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,5 +21,8 @@
   "homepage": "https://github.com/simonplend/egghead-build-a-modern-rest-api-in-node-js-with-fastify#readme",
   "dependencies": {
     "fastify": "^4.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.18"
   }
 }
