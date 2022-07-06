@@ -1,4 +1,3 @@
-import fastify from "fastify";
 import { buildApp } from "./app.js";
 
 const app = await buildApp();
