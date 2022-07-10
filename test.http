@@ -1,0 +1,44 @@
+GET http://localhost:3000/recipes
+
+###
+
+GET http://localhost:3000/recipes?filter=beef
+
+###
+
+GET http://localhost:3000/recipes/3
+
+###
+
+POST http://localhost:3000/recipes
+Content-Type: application/json
+
+# {
+# 	"name": "Caesar salad",
+# 	"ingredients": "lettuce, croutons",
+# 	"time": 52,
+# 	"steps": "Put everything in a bowl"
+# }
+
+{
+	"name": "Beef brisket",
+	"ingredients": "beef, onion, garlic",
+	"time": 52,
+	"steps": "Cook the meat"
+}
+
+###
+
+PUT http://localhost:3000/recipes/3
+Content-Type: application/json
+
+{
+	"name": "Ultimate Beef brisket v2",
+	"ingredients": "beef, onion, garlic",
+	"time": 52,
+	"steps": "Cook the meat"
+}
+
+###
+
+DELETE http://localhost:3000/recipes/5
