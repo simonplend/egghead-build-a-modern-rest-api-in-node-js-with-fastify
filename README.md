@@ -14,6 +14,7 @@ npx knex migrate:latest --knexfile knexfile.mjs
 NODE_ENV=development
 PORT=3000
 LOG_LEVEL=info
+LOG_PRETTY_PRINT=true
 ```
 
 See [src/config.js](src/config.js) for allowed configuration values.
