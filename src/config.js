@@ -2,13 +2,7 @@ import envSchema from "env-schema";
 import S from "fluent-json-schema";
 
 const configSchema = S.object()
-	.required(["NODE_ENV", "PORT", "LOG_LEVEL", "LOG_PRETTY_PRINT"])
-	.prop(
-		"NODE_ENV",
-		S.string()
-			.enum(["development", "test", "production"])
-			.default("development")
-	)
+	.required(["PORT", "LOG_LEVEL", "LOG_PRETTY_PRINT", "DATABASE_ENVIRONMENT"])
 	.prop("PORT", S.string().default(3000))
 	.prop(
 		"LOG_LEVEL",
@@ -17,6 +11,12 @@ const configSchema = S.object()
 	.prop(
 		"LOG_PRETTY_PRINT",
 		S.boolean().default(false)
+	)
+	.prop(
+		"DATABASE_ENVIRONMENT",
+		S.string()
+			.enum(["development", "production"])
+			.default("development")
 	);
 
 export function getConfig() {
