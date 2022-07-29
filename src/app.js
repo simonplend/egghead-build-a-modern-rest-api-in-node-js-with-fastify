@@ -12,7 +12,7 @@ export async function buildApp() {
 		logger: {
 			level: config.LOG_LEVEL,
 			transport:
-				config.NODE_ENV === "development"
+				config.LOG_PRETTY_PRINT
 					? { target: "pino-pretty" }
 					: undefined,
 		},
