@@ -1,4 +1,3 @@
-
 export const up = async (knex) => {
   return knex.schema.createTable("recipes", function (table) {
 		table.increments("id").primary();
