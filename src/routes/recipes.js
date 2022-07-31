@@ -84,19 +84,15 @@ export default async function recipesRoutes(app) {
 		"/:id",
 		{ schema: { params: paramsSchema, body: recipeSchema } },
 		async function (request, reply) {
-			// app.log.info({ params: request.params, body: request.body });
-
 			try {
 				const updatedRecipes = await app
 					.knex("recipes")
 					.where("id", request.params.id)
-					// TODO: Come back to this - debug why it's not returning recipe data
 					.update(request.body, ["id", "name", "ingredients", "time", "steps"]);
 
-				// app.log.info({ updatedRecipes });
-
-				// TODO: Change this when update returns updated recipe
-				if (updatedRecipes === 0) {
+				// TODO: Verify that this check is accurate
+				//       What is updatedRecipes if no match is found?
+				if (updatedRecipes.length === 0) {
 					return reply.notFound("Recipe not found");
 				}
 
