@@ -9,7 +9,7 @@ processes = []
   builder = "heroku/buildpacks:20"
 
 [deploy]
-  release_command = "npx knex migrate:latest --knexfile ./knexfile.mjs --env production"
+  release_command = "npx knex migrate:latest --env production"
 
 [env]
   PORT = "8080"
