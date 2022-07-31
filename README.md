@@ -8,13 +8,14 @@ npm install
 npx knex migrate:latest --knexfile knexfile.mjs
 ```
 
-### Create a `.env` file (optional)
+### Create a `.env` file
 
 ```
 PORT=3000
 LOG_LEVEL=info
 LOG_PRETTY_PRINT=true
 DATABASE_ENVIRONMENT=development
+DATABASE_URL=./recipes.db
 ```
 
 See [src/config.js](src/config.js) for allowed configuration values.
