@@ -1,6 +1,7 @@
 export const up = async (knex) => {
-  return knex.schema.createTable("recipes", function (table) {
-		table.increments("id").primary();
+	return knex.schema.createTable("recipes", function (table) {
+		table.uuid('id').primary().notNullable();
+		// .defaultTo(knex.raw('gen_random_uuid()'))
 		table.text("name");
 		table.text("ingredients");
 		table.integer("time");
