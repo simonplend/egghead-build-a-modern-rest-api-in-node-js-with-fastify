@@ -1,6 +1,10 @@
+import { randomUUID } from "node:crypto";
 import S from "fluent-json-schema";
 
-const paramsSchema = S.object().prop("id", S.number().required());
+const paramsSchema = S.object().prop(
+	"id",
+	S.string().format("uuid").required()
+);
 
 const filterSchema = S.object().prop(
 	"filter",
@@ -68,9 +72,14 @@ export default async function recipesRoutes(app) {
 		{ schema: { body: recipeSchema } },
 		async function (request, reply) {
 			try {
+				const recipe = {
+					id: randomUUID(),
+					...request.body,
+				};
+
 				const recipes = await app
 					.knex("recipes")
-					.insert(request.body, ["id", "name", "ingredients", "time", "steps"]);
+					.insert(recipe, ["id", "name", "ingredients", "time", "steps"]);
 
 				reply.status(201).send(recipes[0]);
 			} catch (error) {
