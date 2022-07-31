@@ -100,7 +100,7 @@ export default async function recipesRoutes(app) {
 					return reply.notFound("Recipe not found");
 				}
 
-				reply.send(recipes[0]);
+				reply.send(updatedRecipes[0]);
 			} catch (error) {
 				app.log.error(error);
 				reply.internalServerError("Error updating recipe");
