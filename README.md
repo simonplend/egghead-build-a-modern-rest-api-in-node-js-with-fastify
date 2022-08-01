@@ -5,7 +5,7 @@
 ```bash
 npm install
 
-npx knex migrate:latest --knexfile knexfile.mjs
+npx knex migrate:latest
 ```
 
 ### Create a `.env` file
