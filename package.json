@@ -25,7 +25,7 @@
     "env-schema": "^5.0.0",
     "fastify": "^4.5.3",
     "fastify-plugin": "^4.2.1",
-    "fluent-json-schema": "^3.1.0",
+    "fluent-json-schema": "^4.0.0",
     "knex": "^2.3.0",
     "pg": "^8.8.0"
   },
