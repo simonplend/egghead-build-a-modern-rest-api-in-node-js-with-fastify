@@ -99,8 +99,6 @@ export default async function recipesRoutes(app) {
 					.where("id", request.params.id)
 					.update(request.body, ["id", "name", "ingredients", "time", "steps"]);
 
-				// TODO: Verify that this check is accurate
-				//       What is updatedRecipes if no match is found?
 				if (updatedRecipes.length === 0) {
 					return reply.notFound("Recipe not found");
 				}
