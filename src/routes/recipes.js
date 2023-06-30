@@ -12,15 +12,14 @@ const filterSchema = S.object().prop(
 );
 
 const recipeSchema = S.object()
-	.required(["name", "ingredients", "time", "steps"])
 	.prop("name", S.string().minLength(3).maxLength(100))
 	.prop(
 		"ingredients",
 		S.string().minLength(3).maxLength(1000)
-		// S.array().minItems(1).items(S.string().minLength(3).maxLength(100))
 	)
 	.prop("time", S.number().minimum(1).maximum(1000))
-	.prop("steps", S.string().minLength(10).maxLength(10000));
+	.prop("steps", S.string().minLength(10).maxLength(10000))
+	.required(["name", "ingredients", "time", "steps"]);
 
 export default async function recipesRoutes(app) {
 	app.get(
