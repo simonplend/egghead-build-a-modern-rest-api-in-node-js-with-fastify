@@ -2,11 +2,11 @@ GET http://localhost:3000/recipes
 
 ###
 
-GET http://localhost:3000/recipes?filter=beef
+GET http://localhost:3000/recipes?filter=salad
 
 ###
 
-GET http://localhost:3000/recipes/1a086ba5-c779-4b0c-baa0-48b785ae600
+GET http://localhost:3000/recipes/b6157573-2ee1-4de2-9a08-5257a6034d1f
 
 ###
 
@@ -16,29 +16,22 @@ Content-Type: application/json
 {
 	"name": "Caesar salad",
 	"ingredients": "lettuce, croutons",
-	"time": 52,
+	"time": 5,
 	"steps": "Put everything in a bowl"
 }
 
-# {
-# 	"name": "Beef brisket",
-# 	"ingredients": "beef, onion, garlic",
-# 	"time": 52,
-# 	"steps": "Cook the meat"
-# }
-
 ###
 
-PUT http://localhost:3000/recipes/5676a35f-8155-4f37-911e-977acc9ade5a
+PUT http://localhost:3000/recipes/b6157573-2ee1-4de2-9a08-5257a6034d1f
 Content-Type: application/json
 
 {
-	"name": "Ultimate Beef brisket v2",
-	"ingredients": "beef, onion, garlic",
-	"time": 52,
-	"steps": "Cook the meat"
+	"name": "Caesar salad",
+	"ingredients": "lettuce, croutons, parmesan, olive oil",
+	"time": 5,
+	"steps": "Put everything in a bowl"
 }
 
 ###
 
-DELETE http://localhost:3000/recipes/5676a35f-8155-4f37-911e-977acc9ade5a
+DELETE http://localhost:3000/recipes/b6157573-2ee1-4de2-9a08-5257a6034d1f
