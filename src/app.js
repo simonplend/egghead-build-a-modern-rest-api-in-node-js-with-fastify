@@ -8,7 +8,7 @@ import recipesRoutes from "./routes/recipes.js";
 export async function buildApp() {
 	const config = getConfig();
 
-	const fastify = Fastify({
+	const app = Fastify({
 		logger: {
 			level: config.LOG_LEVEL,
 			transport:
@@ -18,13 +18,13 @@ export async function buildApp() {
 		},
 	});
 
-	fastify.decorate("config", config);
+	app.decorate("config", config);
 
-	await fastify.register(sensiblePlugin);
+	await app.register(sensiblePlugin);
 
-	await fastify.register(knexPlugin);
+	await app.register(knexPlugin);
 
-	await fastify.register(recipesRoutes, { prefix: "/recipes" });
+	await app.register(recipesRoutes, { prefix: "/recipes" });
 
-	return fastify;
+	return app;
 }
