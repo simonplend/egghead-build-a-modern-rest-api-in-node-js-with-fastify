@@ -38,7 +38,7 @@ export default async function recipesRoutes(app) {
 				const recipes = await recipesQuery;
 				reply.send(recipes);
 			} catch (error) {
-				app.log.error(error);
+				request.log.error(error);
 				reply.internalServerError("Error retrieving recipes");
 			}
 		}
@@ -60,7 +60,7 @@ export default async function recipesRoutes(app) {
 
 				reply.send(recipe);
 			} catch (error) {
-				app.log.error(error);
+				request.log.error(error);
 				reply.internalServerError("Error retrieving recipe");
 			}
 		}
@@ -82,7 +82,7 @@ export default async function recipesRoutes(app) {
 
 				reply.status(201).send(recipes[0]);
 			} catch (error) {
-				app.log.error(error);
+				request.log.error(error);
 				reply.internalServerError("Error adding recipe");
 			}
 		}
@@ -104,7 +104,7 @@ export default async function recipesRoutes(app) {
 
 				reply.send(updatedRecipes[0]);
 			} catch (error) {
-				app.log.error(error);
+				request.log.error(error);
 				reply.internalServerError("Error updating recipe");
 			}
 		}
@@ -120,15 +120,13 @@ export default async function recipesRoutes(app) {
 					.where("id", request.params.id)
 					.del();
 
-				app.log.info({ deletedRecipes });
-
 				if (deletedRecipes === 0) {
 					return reply.notFound("Recipe not found");
 				}
 
 				reply.status(204);
 			} catch (error) {
-				app.log.error(error);
+				request.log.error(error);
 				reply.internalServerError("Error deleting recipe");
 			}
 		}
