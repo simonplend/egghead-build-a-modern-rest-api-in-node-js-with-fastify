@@ -27,7 +27,7 @@
     "fastify-plugin": "^4.5.0",
     "fluent-json-schema": "^4.0.0",
     "knex": "^2.4.2",
-    "pg": "^8.8.0"
+    "pg": "^8.11.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.20",
