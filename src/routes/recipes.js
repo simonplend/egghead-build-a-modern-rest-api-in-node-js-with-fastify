@@ -26,15 +26,15 @@ export default async function recipesRoutes(app) {
 		"/",
 		{ schema: { query: filterSchema } },
 		async function (request, reply) {
-			const filter = request.query.filter;
-
-			let recipesQuery = app.knex("recipes").select();
-
-			if (filter) {
-				recipesQuery = recipesQuery.where("name", "like", `%${filter}%`);
-			}
-
 			try {
+				const filter = request.query.filter;
+
+				let recipesQuery = app.knex("recipes").select();
+
+				if (filter) {
+					recipesQuery = recipesQuery.where("name", "like", `%${filter}%`);
+				}
+
 				const recipes = await recipesQuery;
 				reply.send(recipes);
 			} catch (error) {
