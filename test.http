@@ -1,4 +1,4 @@
-GET http://localhost:3000/recipes
+GET http://localhost:3003/recipes
 
 ###
 
@@ -6,11 +6,11 @@ GET http://localhost:3000/recipes?filter=salad
 
 ###
 
-GET http://localhost:3000/recipes/b6157573-2ee1-4de2-9a08-5257a6034d1f
+GET http://localhost:3003/recipes/b6157573-2ee1-4de2-9a08-5257a6034d1b
 
 ###
 
-POST http://localhost:3000/recipes
+POST http://localhost:3003/recipes
 Content-Type: application/json
 
 {
