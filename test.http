@@ -2,11 +2,11 @@ GET http://localhost:3003/recipes
 
 ###
 
-GET http://localhost:3000/recipes?filter=salad
+GET http://localhost:3003/recipes?filter=salad
 
 ###
 
-GET http://localhost:3003/recipes/b6157573-2ee1-4de2-9a08-5257a6034d1b
+GET http://localhost:3003/recipes/d19be4c4-d059-4c86-993b-76a92e9e16bf
 
 ###
 
@@ -22,11 +22,11 @@ Content-Type: application/json
 
 ###
 
-PUT http://localhost:3000/recipes/b6157573-2ee1-4de2-9a08-5257a6034d1f
+PUT http://localhost:3003/recipes/d19be4c4-d059-4c86-993b-76a92e9e16bf
 Content-Type: application/json
 
 {
-	"name": "Caesar salad",
+	"name": "Caesar salad v2",
 	"ingredients": "lettuce, croutons, parmesan, olive oil",
 	"time": 5,
 	"steps": "Put everything in a bowl"
@@ -34,4 +34,4 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:3000/recipes/b6157573-2ee1-4de2-9a08-5257a6034d1f
+DELETE http://localhost:3003/recipes/afef2d6a-7e2d-422b-875e-b46a336ae900
