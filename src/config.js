@@ -5,7 +5,7 @@ const configSchema = S.object()
 	.prop("PORT", S.string().default(3000))
 	.prop(
 		"LOG_LEVEL",
-		S.string().enum(["debug", "info", "error"]).default("info")
+		S.string().enum(["debug", "info", "warn", "error"]).default("info")
 	)
 	.prop("LOG_PRETTY_PRINT", S.boolean().default(false))
 	.prop(
