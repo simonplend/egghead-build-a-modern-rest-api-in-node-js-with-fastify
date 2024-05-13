@@ -1,9 +1,11 @@
 import { buildApp } from "./app.js";
+import { getConfig } from "./config.js";
 
-const app = await buildApp();
+const config = getConfig();
+const app = await buildApp(config);
 
 try {
-	app.listen({ port: app.config.PORT, host: "0.0.0.0" });
+	app.listen({ port: config.PORT, host: "0.0.0.0" });
 } catch (error) {
 	app.log.error(error);
 	process.exit(1);

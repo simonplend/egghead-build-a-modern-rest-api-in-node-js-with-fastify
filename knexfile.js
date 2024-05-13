@@ -2,7 +2,7 @@ import { getConfig } from "./src/config.js";
 
 const config = getConfig();
 
-export default {
+const knexConfig = {
 	development: {
 		client: "better-sqlite3",
 		connection: {
@@ -15,3 +15,16 @@ export default {
 		connection: config.DATABASE_URL,
 	}
 };
+
+export function getKnexConfigByEnv(databaseEnvironment) {
+	const configForEnv = knexConfig[databaseEnvironment];
+	if (!configForEnv) {
+		throw new Error(
+			`No Knex database configuration found for environment '${databaseEnvironment}'`
+		);
+	}
+
+	return configForEnv;
+}
+
+export default knexConfig;
