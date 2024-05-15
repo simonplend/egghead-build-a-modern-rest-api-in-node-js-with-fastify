@@ -16,7 +16,7 @@ const knexConfig = {
 	}
 };
 
-export function getKnexConfigByEnv(databaseEnvironment) {
+export function getKnexConfigForEnv(databaseEnvironment) {
 	const configForEnv = knexConfig[databaseEnvironment];
 	if (!configForEnv) {
 		throw new Error(

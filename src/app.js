@@ -2,7 +2,7 @@ import Fastify from "fastify";
 import sensiblePlugin from "@fastify/sensible";
 
 import knexPlugin from "./plugins/knex.js";
-import { getKnexConfigByEnv } from "../knexfile.js"
+import { getKnexConfigForEnv } from "../knexfile.js"
 
 import recipesRoutes from "./routes/recipes.js";
 
@@ -19,7 +19,7 @@ export async function buildApp(config) {
 
 	await app.register(sensiblePlugin);
 
-	const knexConfig = getKnexConfigByEnv(config.DATABASE_ENVIRONMENT);
+	const knexConfig = getKnexConfigForEnv(config.DATABASE_ENVIRONMENT);
 	await app.register(knexPlugin, { knexConfig });
 
 	await app.register(recipesRoutes, { prefix: "/recipes" });
